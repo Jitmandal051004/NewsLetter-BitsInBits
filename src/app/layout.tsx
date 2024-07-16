@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Footer, Navbar } from "@/components";
 import { inter } from "./fonts";
+import AuthProvider from "./context/AuthProvider";
 
 export const metadata: Metadata = {
    title: "BITSinBITS",
@@ -13,15 +13,15 @@ export default function RootLayout({
 }: Readonly<{
    children: React.ReactNode;
 }>) {
-  return (
+   return (
       <html lang="en">
-         <body className={inter.className}>
-               <Navbar/>
-               <main>
-                  {children}
-               </main>
-               <Footer />
-         </body>
-    </html>
-  );
+         <AuthProvider>
+            <body className={inter.className}>
+                  <main>
+                     {children}
+                  </main>
+            </body>
+         </AuthProvider>
+      </html>
+   );
 }

@@ -5,7 +5,6 @@
 @tailwind utilities;
 
 * {
-   background-color: #FAFFAF;
    font-size: 18px;
    box-sizing: border-box;
    margin: 0;
@@ -14,9 +13,19 @@
 
 body{
    font-family: "Roboto Slab", serif;
-   font-weight: 500
+   background-color: #FAFFAF;
 }
 
+footer{
+   font-family: "Roboto Slab", serif;
+
+}
+
+.paddings{
+   @apply lg:px-10 py-6 px-5
+}
+
+/* Navbar */
 .flexBetween {
    @apply flex justify-between items-center;
 }
@@ -29,6 +38,23 @@ body{
    @apply flex items-center justify-between
 }
 
+.flexCenter{
+   @apply flex justify-center items-center
+}
+
 .title{
    @apply font-semibold
+}
+
+/* Footer */
+.footer{
+   @apply flex-col paddings w-full gap-20 bg-[#dde19a];
+}
+
+.footer_column{
+   @apply flex-1 flex flex-col gap-3 text-sm font-normal
+}
+
+.footer_copyright{
+   @apply max-sm:flex-col w-full text-xs font-normal;
 }
