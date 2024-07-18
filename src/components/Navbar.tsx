@@ -1,11 +1,16 @@
+"use client";
+
 import Link from "next/link"
 import Image from "next/image"
 import { NavLinks } from "@/constants"
 import { roboto_slab } from "@/app/fonts"
-// import Authproviders from "./Authproviders"
+import { signOut,useSession } from "next-auth/react";
+import { Button } from "@headlessui/react";
+import { useEffect } from "react";
 
 const Navbar = () => {
-   const session = null
+   const {status, data: session} = useSession();
+   const role = session?.user.role
 
    return (
       <nav className="flexBetween navbar">
@@ -28,26 +33,32 @@ const Navbar = () => {
             </Link>
             <ul className= {`xl:flex hidden text-small gap-7 ${roboto_slab.className}`} >
                {NavLinks.map((link)=>(
-                  <Link href={link.href} key={link.key}>
+                  <Link className="p-3 rounded-md hover:bg-[#dde19a] hover:text-zinc-600 font-bold active:text-zinc-400 ease-linear" href={link.href} key={link.key}>
                      {link.text}
                   </Link>
                ))}
             </ul>
          </div>
 
-         {/* <div className={`xl:flex flexcenter hidden gap-4 ${roboto_slab.className}`}>
-            {session ? (
+         <div className={`xl:flex flexcenter hidden gap-3 ${roboto_slab.className} justify-center items-center`}>
+            {status === "authenticated" && role === "ADMIN" ? (
                <>
-                  UserPhoto
-
-                  <Link href="/publish">
-                     Publish
-                  </Link>
+                  <span className="text-lg">{session?.user?.name}</span>
+                  <Button className="p-3 rounded-md hover:bg-[#dde19a] font-bold active:text-zinc-500 ease-linear" onClick={() => signOut()}>
+                     SignOut
+                  </Button>
+                  <Link href="/publish" className="font-bold text-lg text-blue-500">Publish</Link>
                </>
-            ) : (
-               <Authproviders />
-            )}
-         </div> */}
+            ) : status === "authenticated" ? (
+               <>
+                  <span className="text-lg">{session?.user?.name}</span>
+                  <Button className="p-3 rounded-md hover:bg-[#dde19a] font-bold active:text-zinc-500 ease-linear" onClick={() => signOut()}>
+                     SignOut
+                  </Button>
+                  <Link href="/publish" className="font-bold text-lg text-red-500">Publish</Link>
+               </>
+            ) : null}
+         </div>
       </nav>
    )
 }

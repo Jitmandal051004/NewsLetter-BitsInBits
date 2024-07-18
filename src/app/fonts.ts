@@ -5,7 +5,7 @@ export const inter = Inter({
 });
 
 export const roboto_slab = Roboto_Slab({
-   weight: "500",
+   weight: ["500", "400", "600"],
    subsets: ["latin"]
 })
 

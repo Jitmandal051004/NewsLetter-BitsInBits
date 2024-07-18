@@ -14,11 +14,20 @@
 body{
    font-family: "Roboto Slab", serif;
    background-color: #FAFFAF;
+   min-height: 100vh;
+   margin: 0;
+   overflow-y: auto;
+}
+
+.wrapper{
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
 }
 
 footer{
    font-family: "Roboto Slab", serif;
-
+   margin-top: auto;
 }
 
 .paddings{
@@ -35,7 +44,7 @@ footer{
 }
 
 .flexStart{
-   @apply flex items-center justify-between
+   @apply flex items-center justify-start
 }
 
 .flexCenter{
@@ -57,4 +66,9 @@ footer{
 
 .footer_copyright{
    @apply max-sm:flex-col w-full text-xs font-normal;
+}
+
+/* Home */
+.projects-grid{
+   @apply grid gap-10 mt-10 w-full;
 }

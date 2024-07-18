@@ -1,7 +1,7 @@
 "use client"
+
 import { Authpage } from '@/components'
 import { signIn } from 'next-auth/react'
-// import Image from 'next/image'
 
 const page = () => {
    const handleClick = () => {
@@ -10,9 +10,9 @@ const page = () => {
 
    return (
       <Authpage
-         content='Sign In'
-         transfer='Not Signed Up? Click here'
-         destination='Sign-up'
+         content='Sign Up'
+         transfer='Already Signed Up? Click here'
+         destination='sign-in'
          onButtonClick={handleClick}
       />
    )

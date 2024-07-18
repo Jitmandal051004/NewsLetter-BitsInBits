@@ -12,7 +12,11 @@ const FooterColumn = ({title, links} : ColumnProps) => (
    <div className={`footer_column ${dm_sans.className} text-lg`} >
       <h4 className='font-semibold'>{title}</h4>
       <ul className="flex flex-col gap-2 font-normal text-xs">
-         {links.map((link) => <Link href="/" key={link}>{link}</Link>)}
+         {links.map((link) => <Link className='inline' href="/" key={link}>
+            <span>
+               {link}
+            </span>
+         </Link>)}
       </ul>
    </div>
 )
