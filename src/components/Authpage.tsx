@@ -4,8 +4,6 @@ import { roboto_slab } from "@/app/fonts"
 import { Button } from "@headlessui/react"
 import Image from "next/image"
 import Link from "next/link";
-import { signIn } from "next-auth/react";
-import { auth } from "@/app/(auth)/auth";
 
 type LogType = {
    content: string;

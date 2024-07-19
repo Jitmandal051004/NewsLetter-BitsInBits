@@ -1,53 +1,30 @@
 // 'use client'
+import { auth } from "@/app/(auth)/auth";
 import { FailedAuth, Footer, Loading, Navbar, NewsCard} from "@/components";
 import { tempDataPostcards } from "@/constants";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { fetchPosts } from "./api/posts/route";
-import { auth } from "./(auth)/auth";
 
-interface postData{
-   id: string;
-   createdAt: Date;
-   slug: string;
-   title: string;
-   dept: string;
-   desc: string;
-   Body: string;
-   imgUrl: string | null;
-   views: number;
-   likes: number;
-   userEmail: string;
-} 
+// const getData = 
 
 export default async function Home() {
-   // const {data, status} = useSession();
+   // const {data: session, status} = useSession();
    // const router = useRouter();
-
-   // if(status === 'loading'){
-   //    <Loading />
-   // }
 
    // if(status === 'unauthenticated'){
    //    router.push("/sign-in")
    // }
 
-   // const [posts, setPosts] = useState<postData[]>([]);
-
-   // useEffect(() => {
-   //    const getPosts = async () => {
-   //       try {
-   //          const fetchedPosts = await fetchPosts();
-   //          setPosts(fetchedPosts)
-   //       } catch (error) {
-            
-   //       }
-   //    }
-   //    getPosts()
-   // }, []);
-   
-   // console.log('Posts', posts)
+   // if(session?.user.role !== 'ADMIN'){
+   //    return (
+   //       <FailedAuth
+   //          img="NoAccess.png"
+   //          text="You have not logged in yet"
+   //          transfer="Go to Login Page"
+   //          destination="sign-in"
+   //       />
+   //    )
+   // }
 
    const session = await auth()
    if(!session?.user){
@@ -59,16 +36,12 @@ export default async function Home() {
       />
    } 
 
-   // console.log("Home page consoleLog", session, session?.user, session?.user.name, session?.user.role)
-
    let Username = ""
    let UserRole = ""
    if(session?.user.name && session?.user.role ){
       Username = session?.user.name
       UserRole = session?.user.role 
    }
-
-   // console.log(UserRole, Username)
 
    return (
       <div className="wrapper gap-12">

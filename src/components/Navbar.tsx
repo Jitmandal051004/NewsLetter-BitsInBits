@@ -6,12 +6,14 @@ import { NavLinks } from "@/constants"
 import { roboto_slab } from "@/app/fonts"
 import { signOut,useSession } from "next-auth/react";
 import { Button } from "@headlessui/react";
-import { useEffect } from "react";
 
-const Navbar = () => {
-   const {status, data: session} = useSession();
-   const role = session?.user.role
+type authentication = {
+   user: boolean;
+   userName: string;
+   role : string;
+}
 
+const Navbar = async ({user, userName, role}: authentication) => {
    return (
       <nav className="flexBetween navbar">
          <div className="flex-1 flexStart gap-10">
@@ -41,17 +43,18 @@ const Navbar = () => {
          </div>
 
          <div className={`xl:flex flexcenter hidden gap-3 ${roboto_slab.className} justify-center items-center`}>
-            {status === "authenticated" && role === "ADMIN" ? (
+            {/* {status === "authenticated" && role === "ADMIN" ? ( */}
+            { user && role === "ADMIN" ? (
                <>
-                  <span className="text-lg">{session?.user?.name}</span>
+                  <span className="text-lg">{userName}</span>
                   <Button className="p-3 rounded-md hover:bg-[#dde19a] font-bold active:text-zinc-500 ease-linear" onClick={() => signOut()}>
                      SignOut
                   </Button>
                   <Link href="/publish" className="font-bold text-lg text-blue-500">Publish</Link>
                </>
-            ) : status === "authenticated" ? (
+            ) : user ? (
                <>
-                  <span className="text-lg">{session?.user?.name}</span>
+                  <span className="text-lg">{userName}</span>
                   <Button className="p-3 rounded-md hover:bg-[#dde19a] font-bold active:text-zinc-500 ease-linear" onClick={() => signOut()}>
                      SignOut
                   </Button>
