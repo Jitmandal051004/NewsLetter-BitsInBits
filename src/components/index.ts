@@ -7,7 +7,7 @@ import NewsPage from "./NewsPage";
 import Loading from "./Loading";
 import PublishPage from "./PublishPage";
 import FailedAuth from "./FailedAuth";
-import ImgUploadButton from "./ImgUploadButton";
+
 import FormSaveBtn from "./FormSaveBtn";
 
 export{
@@ -20,6 +20,5 @@ export{
    Loading,
    PublishPage,
    FailedAuth,
-   ImgUploadButton,
    FormSaveBtn
 }

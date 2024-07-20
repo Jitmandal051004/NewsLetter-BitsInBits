@@ -37,11 +37,11 @@ const page = async ({}) => {
       )
    }
 
-   const Username = ""
-   const UserRole = ""
+   let Username = ""
+   let UserRole = ""
    if(session?.user.name && session?.user.role ){
-      const Username = session?.user.name
-      const UserRole = session?.user.role 
+      Username = session?.user.name
+      UserRole = session?.user.role 
    }
 
    return (

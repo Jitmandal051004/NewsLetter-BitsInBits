@@ -22,13 +22,9 @@ const getPosts = async () => {
    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts`,{
       cache: "no-store",
    });
-
-   ////console.log("we did it baby!!!!!", res)
-
    if(!res.ok){
       throw new Error("Failed");
    }
-
    return res.json();
 }
 
@@ -54,7 +50,6 @@ export default async function Home() {
 
    //fetching data
    const Posts = await getPosts();
-   console.log("data is in the party", Posts)
 
    return (
       <div className="wrapper gap-12">
@@ -75,6 +70,7 @@ export default async function Home() {
                   author = {(post?.userName).toLowerCase()}
                   userId = {post?.id}
                   ImgId = {post?.ImgId}
+                  slug = {post?.slug}
                />
             )}
          </div>

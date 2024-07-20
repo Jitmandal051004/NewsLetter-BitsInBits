@@ -13,10 +13,10 @@ type Props = {
    author: string;
    userId: string;
    ImgId: string;
+   slug: string;
 }
 
-const NewsCard = ({id, title, dept, description, post, author, userId, ImgId}: Props) => {
-   console.log("ifjaskldfjksdjfk;asjdklfljaskdljfkldsajfklj",ImgId)
+const NewsCard = ({id, title, dept, description, post, author, userId, ImgId, slug}: Props) => {
    return (
       <div key={id}>
          <div className="max-w-md mx-auto bg-[#FDE49E] rounded-xl shadow-lg overflow-hidden md:max-w-[88%]">
@@ -35,7 +35,7 @@ const NewsCard = ({id, title, dept, description, post, author, userId, ImgId}: P
                </div>
                <div className="p-8 text-balance">
                   <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold mb-3 md:mb-1">{dept}</div>
-                  <Link href={`/news?value=${encodeURIComponent(id)}`} className="block mt-1 text-lg leading-tight font-medium text-black hover:underline hover:text-zinc-700">{title}</Link>
+                  <Link href={`/posts/${slug}`} className="block mt-1 text-lg leading-tight font-medium text-black hover:underline hover:text-zinc-700">{title}</Link>
                   <p className="mt-2 text-slate-500">{description}</p>
                   <div className='mt-2 text-zinc-800 text-sm'>Written by - <span>{author}</span></div>
                </div>
