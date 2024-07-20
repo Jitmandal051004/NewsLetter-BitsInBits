@@ -13,7 +13,7 @@ type authentication = {
    role : string;
 }
 
-const Navbar = async ({user, userName, role}: authentication) => {
+const Navbar = ({user, userName, role}: authentication) => {
    return (
       <nav className="flexBetween navbar">
          <div className="flex-1 flexStart gap-10">
@@ -55,7 +55,7 @@ const Navbar = async ({user, userName, role}: authentication) => {
             ) : user ? (
                <>
                   <span className="text-lg">{userName}</span>
-                  <Button className="p-3 rounded-md hover:bg-[#dde19a] font-bold active:text-zinc-500 ease-linear" onClick={() => signOut()}>
+                  <Button className="py-3 rounded-md hover:bg-[#dde19a] font-bold active:text-zinc-500 ease-linear" onClick={() => signOut()}>
                      SignOut
                   </Button>
                   <Link href="/publish" className="font-bold text-lg text-red-500">Publish</Link>

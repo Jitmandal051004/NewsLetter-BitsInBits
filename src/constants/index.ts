@@ -48,6 +48,19 @@ export const tempDataPostcards = [
       "author": "John Doe",
       "userId": "12345"
    },
+]
+
+export const DataPostcards = [
+   {
+      "id": "0",
+      "imageUrl": "https://images.unsplash.com/photo-1526470608268-f674ce90ebd4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "title": "Lorem Ipsum Dolor Sit Amet",
+      "dept": "Development Society, Bits Goa",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis lectus sit amet risus pretium, id dapibus justo feugiat. Ut eu odio vestibulum, consequat justo eu, fermentum libero.",
+      "post": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis lectus sit amet risus pretium, id dapibus justo feugiat. Ut eu odio vestibulum, consequat justo eu, fermentum libero. Quisque sit amet risus nec purus laoreet ultrices. Fusce in consectetur metus, vitae finibus libero. Proin elementum leo id ex ullamcorper vestibulum. Mauris vel vestibulum ante. Phasellus convallis risus ac mi feugiat, nec vestibulum ex ullamcorper. Integer auctor vitae velit non finibus. Fusce vitae leo ante.",
+      "author": "John Doe",
+      "userId": "12345"
+   },
    {
       "id": "1",
       "imageUrl": "https://example.com/news-image2.jpg",

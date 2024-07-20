@@ -29,7 +29,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             return token
          }
 
-         console.log("token callback", {token, user})
+         //console.log("token callback", {token, user})
          
          return{
             ...token,

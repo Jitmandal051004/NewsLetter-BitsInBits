@@ -6,22 +6,6 @@ import Image from 'next/image'
 import { useRouter, useSearchParams } from 'next/navigation'
 
 const page = async () => {
-   // const params = useSearchParams();
-   // const key = params.get('value');
-
-   // const parsedKey = key ? parseInt(key as string, 10) : null;
-
-   // const {data, status} = useSession();
-   // const router = useRouter();
-
-   // if(status === 'loading'){
-   //    <Loading />
-   // }
-
-   // if(status === 'unauthenticated'){
-   //    router.push("/sign-in")
-   // }
-
    const session = await auth()
    if(!session?.user){
       return <FailedAuth

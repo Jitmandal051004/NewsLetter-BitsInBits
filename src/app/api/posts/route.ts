@@ -1,3 +1,4 @@
+import { auth } from "@/app/(auth)/auth";
 import prisma from "@/lib/connect";
 import { NextResponse } from "next/server";
 
@@ -13,9 +14,11 @@ interface postData{
    views: number;
    likes: number;
    userEmail: string;
+   username: string;
 }
 
-export const fetchPosts = async ():Promise<postData[]> => {
+//Get Post
+export const GET = async () => {
    // const { searchParams } = new URL(req.url);
 
    try {
@@ -24,10 +27,11 @@ export const fetchPosts = async ():Promise<postData[]> => {
             createdAt: "desc"
          },
       });
-      return posts
+      // console.log("Posts of news article",posts)
+      return NextResponse.json(posts, {status: 200})
    } catch (error) {
       console.log(error);
-      // return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })      
+      return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })      
       throw error
    }
 }

@@ -1,20 +1,20 @@
-"use client"
 import { FailedAuth, Footer, Navbar, PublishPage } from '@/components'
-import React from 'react'
-import { useRouter } from 'next/navigation'
-import { useSession } from 'next-auth/react'
 import { auth } from '@/app/(auth)/auth'
 
+//creating data
+// const createPost = async () => {
+//    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/publish`,{
+//       cache: "no-store"
+//    });
+//    if(!res.ok){
+//       throw new Error("Failed");
+//    }
+
+//    return res.json();
+// }
+
 const page = async ({}) => {
-   // const {status, data: session} = useSession();
-   // const role = session?.user.role
-   // const router = useRouter();
-
-
-   // if(status === 'unauthenticated'){
-   //    router.push("/sign-in")
-   // }
-
+   //Authentication -->
    const session = await auth()
 
    if(!session?.user){
