@@ -7,8 +7,11 @@ import NewsPage from "./NewsPage";
 import Loading from "./Loading";
 import PublishPage from "./PublishPage";
 import FailedAuth from "./FailedAuth";
-
+import Comments from "./Comments";
 import FormSaveBtn from "./FormSaveBtn";
+import CommentForm from "./CommentForm";
+import CommentBox from "./CommentBox";
+import SinglePImg from "./SinglePImg";
 
 export{
    Hero,
@@ -20,5 +23,9 @@ export{
    Loading,
    PublishPage,
    FailedAuth,
-   FormSaveBtn
+   FormSaveBtn, 
+   Comments,
+   CommentForm,
+   CommentBox,
+   SinglePImg
 }

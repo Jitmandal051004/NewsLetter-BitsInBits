@@ -46,7 +46,7 @@ export default function PublishPage() {
                               type="text"
                               placeholder="lorem ipsum"
                               autoComplete="title"
-                              className="block flex-1 rounded-md border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                              className="block flex-1 rounded-md border-0 bg-transparent py-1.5 pl-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                               required
                            />
                         </div>
@@ -65,7 +65,7 @@ export default function PublishPage() {
                               type="text"
                               placeholder="Development Society, BITS Goa"
                               autoComplete="Department"
-                              className="block flex-1 rounded-md border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                              className="block flex-1 rounded-md border-0 bg-transparent py-1.5 pl-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                               required
                            />
                         </div>
@@ -81,7 +81,7 @@ export default function PublishPage() {
                               id="desc"
                               name="desc"
                               rows={3}
-                              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                              className="block w-full rounded-md border-0 py-1.5 pl-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 overflow-auto"
                               defaultValue={''}
                               required
                         />
@@ -95,7 +95,6 @@ export default function PublishPage() {
                      </label>
                      <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
                         <div className="text-center">
-                           {/* <PhotoIcon aria-hidden="true" className="mx-auto h-12 w-12 text-gray-300" /> */}
                            <div className="mt-4 flex text-sm leading-6 text-gray-600 justify-center">
                               <CldUploadButton
                                  uploadPreset="mizuToOcha"
@@ -120,12 +119,12 @@ export default function PublishPage() {
                            id="body"
                            name="body"
                            rows={3}
-                           className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                           className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 overflow-auto pl-1.5"
                            defaultValue={''}
                            required
                         />
                      </div>
-                     <p className="mt-3 text-md leading-6 text-red-500">Note: Please, put "&lt;br&gt;" tag at the end of a paragraph before starting a new paragraph. </p>
+                     <p className="mt-3 text-md leading-6 text-red-400">Note: please, put "&lt;br&gt;" tag at the end of a paragraph before starting a new paragraph. </p>
                   </div>
                </div>
             </div>

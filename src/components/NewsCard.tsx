@@ -1,8 +1,8 @@
-'use client'
-import { CldImage } from 'next-cloudinary';
-import Image from 'next/image';
+"use client"
 import Link from 'next/link';
 import React from 'react'
+import SinglePImg from './SinglePImg';
+import { CldImage } from 'next-cloudinary';
 
 type Props = {
    id: string;
@@ -21,7 +21,8 @@ const NewsCard = ({id, title, dept, description, post, author, userId, ImgId, sl
       <div key={id}>
          <div className="max-w-md mx-auto bg-[#FDE49E] rounded-xl shadow-lg overflow-hidden md:max-w-[88%]">
             <div className="md:flex">
-               <div className="md:shrink-0">
+               <div className="md:shrink-0 max-h-[260px] overflow-auto">
+                  {/* better to make this image client */}
                   {ImgId && (
                      <CldImage
                         className="h-48 w-full object-cover md:h-full md:w-48" 
@@ -29,9 +30,15 @@ const NewsCard = ({id, title, dept, description, post, author, userId, ImgId, sl
                         width={192}
                         height={100}
                         alt="Modern building architecture" 
-                        priority= {true}
+                        sizes='100vw'
                      />
                   )}
+                  {/* <SinglePImg
+                     id={ImgId}
+                     width = {192}
+                     height={100}
+                     className= 'h-48 w-full object-cover md:h-full md:w-48'
+                  /> */}
                </div>
                <div className="p-8 text-balance">
                   <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold mb-3 md:mb-1">{dept}</div>

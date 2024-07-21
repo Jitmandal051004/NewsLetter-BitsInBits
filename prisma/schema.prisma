@@ -99,7 +99,7 @@ model Post {
 model Comment {
    id        String   @id @default(cuid()) @map("_id")
    createdAt DateTime @default(now())
-   desc      String
+   body      String
    userEmail String
    user      User     @relation(fields: [userEmail], references: [email])
    postid    String
